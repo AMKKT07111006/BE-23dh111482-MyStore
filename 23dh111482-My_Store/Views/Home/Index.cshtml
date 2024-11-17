@@ -1,0 +1,61 @@
+﻿
+@model _23dh111482_My_Store.Models.ViewModel.HomeProductVM
+
+@{
+    ViewBag.Title = "Customer Home Page";
+    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+    <link href="~/Content/css/Index.css" rel="stylesheet" />
+}
+<style>
+    .searchProd{
+        text-align:center;
+    }
+
+    .search-container form input{
+        font-size:25px;
+    }
+
+   
+    .search-container {
+        font-size: 25px;
+    }
+
+  
+</style>
+
+@*PHẦN BANNER*@
+<section class="container-fluid banner">
+    <div class="banner-content">
+        <h1 style="color:crimson">Chào mừng đến với trang web YouSport</h1>
+        <p style="color:crimson">Mua sắm trực tuyến với hàng ngàn sản phẩm đa dạng và chất lượng</p>
+        <a href="#" class="btn">Bắt đầu mua sắm</a>
+    </div>
+</section>
+
+@*PHẦN TÌM KIẾM*@
+<section class="container-fluid searchProd">
+    <h2>Tìm kiếm sản phẩm</h2>
+    @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+    {
+        <div class="form-group search-container">
+            @Html.TextBoxFor(m => m.SearchTerm, new
+       {
+           @class = "search-input",
+           placeholder = "Nhập tên, mô tả hoặc loại sản phẩm"
+            })
+
+            <button type="submit" class="search-button">Tìm kiếm</button>
+        </div>
+    }
+</section>
+<hr />
+
+@*PHẦN SẢN PHẨM NỔI BẬT*@
+@Html.Partial("FeatureProductsPV", Model)
+
+
+<br />
+<br />
+
+@*PHẦN SẢN PHẨM MỚI*@
+@Html.Partial("NewProductsPV", Model)

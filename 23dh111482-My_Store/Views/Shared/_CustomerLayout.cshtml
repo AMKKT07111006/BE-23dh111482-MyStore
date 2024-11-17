@@ -1,0 +1,93 @@
+﻿
+<link href="~/Content/css/CustomerLayout.css" rel="stylesheet" />
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <a href="~/Home/Index">
+                    <img src="~/Content/img/logo.png" />
+                </a>
+            </div>
+
+            <div class="menu">
+                <label class="menu-list">Sản phẩm bóng đá</label>
+                <select name="menu" size="1" required>
+                    <option value="---">Quần áo bóng đá</option>
+                    <option value="---">Giày bóng đá</option>
+                    <option value="---">Giày bóng đá fustal</option>
+                    <option value="---">Giày bóng đá sân cỏ</option>
+                    <option value="---">Giày bóng đá cho trẻ em</option>
+                    <option value="---">Các phụ kiện bóng đá</option>
+                </select>
+            </div>
+
+            <section class="search-content">
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Bạn đang tìm sản phẩm gì..." />
+                    <button id="search-btn">Tìm kiếm</button>
+                </div>
+            </section>
+
+            <section class="Hotline">
+                <h3>10000000</h3>
+                <p>Hotline miễn phí</p>
+            </section>
+
+            <section class="shoppingCart">
+                <img src="~/Content/img/shoppingCart.png" /> <a href="~/Cart/Index">Giỏ hàng</a>
+            </section>
+
+            <section class="prodOrders">
+                <img src="~/Content/img/prodOrder.png" />   <a href="~/XNDonHang/XNDH">Đơn hàng</a>
+            </section>
+
+            <section class="dangnhap">
+                <a href="~/Account/Register">Đăng ký</a>
+            </section>
+        </header>
+        <div>
+            @RenderBody()
+        </div>
+        <footer>
+            <div class="aboutUs">
+                <h2>Về chúng tôi</h2>
+                <p>Địa chỉ:................................</p>
+                <p>Email liên hệ:................................</p>
+            </div>
+
+            <div class="support">
+                <h3>HỖ TRỢ KHÁCH HÀNG</h3>
+                <ul>
+                    <li><a href="#">Chọn size giày bóng đá</a></li>
+                    <li><a href="#">Chọn size quần áo bóng đá</a></li>
+                    <li><a href="#">Bảo hành &amp; Đổi trả</a></li>
+                </ul>
+            </div>
+
+            <div class="request">
+                <h3>Chính sách chung</h3>
+                <ul>
+                    <li><a href="#">Nhận in áo theo yêu cầu</a></li>
+                    <li><a href="#">Chính sách bảo mật khách hàng</a></li>
+                </ul>
+            </div>
+
+            <div class="socialMedia">
+                <a href="#">
+                    <img src="~/Content/img/fb.png" />
+                </a>
+                <a href="#">
+                    <img src="~/Content/img/ig.png" />
+                </a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
